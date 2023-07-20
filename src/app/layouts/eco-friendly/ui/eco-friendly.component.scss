@@ -1,0 +1,31 @@
+@import "src/app/shared/styles/mixins";
+
+.eco-friendly {
+  @include flex-v-center;
+  &__content {
+    margin-left: -80px;
+    padding: 89px 77px;
+    background: var(--color-white);
+    border-radius: 30px;
+  }
+
+  &__title {
+    width: 500px;
+    margin-bottom: 35px;
+  }
+
+  &__item {
+    &_title {
+      margin-bottom: 8px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 29px;
+      color: var(--color-primary);
+    }
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
+  }
+}

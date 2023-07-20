@@ -1,0 +1,14 @@
+<section class="products">
+  <div class="container">
+    <div class="subtitle products__subtitle">Categories</div>
+    <h2 class="title products__title">Our Products</h2>
+    <ul class="products__list">
+      <li class="products__item" *ngFor="let product of products">
+        <app-product [product]="product"></app-product>
+      </li>
+    </ul>
+    <app-button class="products__button" type="primary"
+      >Load more <img src="assets/btn-arrow.svg" alt=""
+    /></app-button>
+  </div>
+</section>

@@ -6,8 +6,6 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -17,12 +15,21 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "module": "es2020",
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@core/*": ["./src/app/core/*"],
+      "@pages/*": ["./src/app/pages/*"],
+      "@layouts/*": ["./src/app/layouts/*"],
+      "@widgets/*": ["./src/app/widgets/*"],
+      "@features/*": ["./src/app/features/*"],
+      "@entities/*": ["./src/app/entities/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@basic/*": ["./src/app/basic/*"]
+    },
+    "noUnusedLocals": false,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

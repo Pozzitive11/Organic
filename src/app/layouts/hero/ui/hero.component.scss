@@ -1,0 +1,28 @@
+.hero {
+  padding: 246px 0;
+  background-image: url("/assets/hero/hero-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__title {
+    width: 530px;
+    margin-bottom: 23px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 82px;
+    color: var(--color-primary);
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+    font-family: "Yellowtail";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 49px;
+    color: var(--color-green);
+  }
+}

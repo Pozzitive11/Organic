@@ -1,0 +1,34 @@
+<header class="header">
+  <div class="container-fluid">
+    <div class="header__inner">
+      <app-logo class="header__logo"></app-logo>
+      
+      <nav class="nav">
+        <ul class="nav__list">
+          <li routerLinkActive="active" class="nav__item">
+            <a routerLink="/" class="nav__link">Home</a>
+          </li>
+          <li routerLinkActive="active" class="nav__item">
+            <a routerLink="/about" class="nav__link">About</a>
+          </li>
+          <li routerLinkActive="active" class="nav__item">
+            <a routerLink="/pages" class="nav__link">Pages</a>
+          </li>
+          <li routerLinkActive="active" class="nav__item">
+            <a routerLink="/shop" class="nav__link">Shop</a>
+          </li>
+          <li routerLinkActive="active" class="nav__item">
+            <a routerLink="/projects" class="nav__link">Projects</a>
+          </li>
+          <li routerLinkActive="active" class="nav__item">
+            <a routerLink="/news" class="nav__link">News</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__right">
+        <app-search-products></app-search-products>
+        <app-cart></app-cart>
+      </div>
+    </div>
+  </div>
+</header>

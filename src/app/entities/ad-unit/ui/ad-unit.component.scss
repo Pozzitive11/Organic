@@ -1,0 +1,34 @@
+.ad-units {
+  margin-top: 154px;
+  margin-bottom: 190px;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.ad-unit {
+  width: 682px;
+  padding: 110px 0 110px 55px;
+  border-radius: 36px;
+  background-color: rgb(34, 129, 184);
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 47px;
+    color: var(--color-white);
+  }
+
+  &__subtitle {
+    font-family: "Yellowtail";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 49px;
+    color: var(--color-white);
+  }
+}

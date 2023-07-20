@@ -1,0 +1,37 @@
+@import "src/app/shared/styles/mixins";
+
+.about {
+  padding: 186px 0 113px;
+  background-color: var(--color-alabaster);
+  &__wrapper {
+    @include flex;
+  }
+  &__title {
+    margin-bottom: 14px;
+  }
+  &__text {
+    margin-bottom: 46px;
+  }
+  &__list {
+    margin: 46px 0;
+  }
+  &__item {
+    @include flex-v-center;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__item-img {
+    margin-right: 19px;
+  }
+  &__item-title {
+    font-family: "Roboto";
+    font-style: normal;
+    margin-bottom: 7px;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 29px;
+    color: var(--color-primary);
+  }
+}

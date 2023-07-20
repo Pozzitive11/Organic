@@ -1,0 +1,16 @@
+<div class="product">
+  <p class="product__tag">{{ product.tag }}</p>
+  <img class="product__img" [src]="'assets/products/' + product.img" />
+  <h3 class="product__title">{{ product.name }}</h3>
+  <div class="product__info">
+    <div class="product__price">
+      <span class="product__price-old">{{
+        product.old_price | productPrice
+      }}</span>
+      <span class="product__price-new">{{
+        product.new_price | productPrice
+      }}</span>
+    </div>
+    <div class="product__rating">{{ product.rating }}</div>
+  </div>
+</div>

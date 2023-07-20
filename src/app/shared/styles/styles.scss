@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/app/shared/styles/mixins";
+
+body {
+  font-family: var(--font-family-roboto);
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  max-width: var(--container-fluid-width);
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container-small {
+  max-width: var(--container-small-width);
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn {
+  @include flex-all-center;
+
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  border-radius: 16px;
+  padding: 25px 35px 29px;
+  width: 262px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  img {
+    margin-left: 10px;
+  }
+
+  &--primary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: white;
+
+    &:hover {
+      background-color: var(--color-white);
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-yellow);
+    }
+  }
+
+  &--secondary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-yellow);
+    color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: 2px solid var(--color-white);
+    }
+
+  }
+
+  &--info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+    &:focus {
+      outline: 2px solid var(--color-yellow);
+    }
+  }
+
+  &--arrow {
+    background-image: url("/src/assets/btn-arrow.svg");
+  }
+
+  &-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 19px;
+    height: 19px;
+    background-color: #335b6b;
+    border-radius: 100%;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 59px;
+  color: var(--color-primary);
+}
+
+.subtitle {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 49px;
+  color: var(--color-green);
+  margin-bottom: 8px;
+}
+
+.text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 165.4%;
+  color: var(--color-text);
+}

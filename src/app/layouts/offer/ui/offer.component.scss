@@ -1,0 +1,12 @@
+.offer {
+  padding: 200px 0;
+  background-color: var(--color-primary);
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    color: var(--color-white);
+  }
+}

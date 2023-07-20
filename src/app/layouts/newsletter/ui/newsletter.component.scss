@@ -1,0 +1,47 @@
+@import "src/app/shared/styles/mixins";
+
+.newsletter {
+  margin: 185px 0 117px;
+  &__inner {
+    @include flex-h-between;
+    @include bg-cover;
+
+    padding: 105px 71px;
+    background-image: url("/assets/newsletter/newsletter-bg.png");
+    border-radius: 30px;
+  }
+
+  &__title {
+    max-width: 357px;
+    color: var(--color-white);
+  }
+
+  &__form {
+    @include flex-v-center;
+  }
+
+  &__input {
+    width: 349px;
+    margin-right: 6px;
+    padding: 28px 23px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    border: none;
+    border: 1px solid transparent;
+    font-size: 18px;
+    line-height: 21px;
+
+    &:hover {
+      border: 1px solid var(--color-text);
+    }
+
+    &:placeholder {
+      font-family: "Roboto";
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      color: #ababab;
+    }
+  }
+}
