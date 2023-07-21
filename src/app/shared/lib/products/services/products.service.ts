@@ -2,23 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '@basic/api';
 import { Observable, tap } from 'rxjs';
-import { Product } from '../../../../entities/product/models/products.model';
-import { Store } from '@ngrx/store';
-import { ProductActions } from '@entities/product/store';
+import { Product } from '../models/products.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService extends ApiService {
-  constructor(protected http: HttpClient, private store: Store) {
+  constructor(protected http: HttpClient) {
     super(http);
   }
 
   getProducts(): Observable<Product[]> {
-    return this.get<Product[]>();
-  }
-
-  setProducts(products: Product[]): void {
-    this.store.dispatch(ProductActions.getProductsSuccess({ products }));
+    return this.get<Product[]>().pipe(tap((data) => console.log(data)));
   }
 }

@@ -1,13 +1,7 @@
 <section class="ad-units">
   <div class="container">
     <div class="ad-units__items">
-      <div
-        *ngFor="let adUnit of adUnits"
-        class="ad-unit"
-        [ngStyle]="{
-          background: 'url(' + adUnit.backgroundUrl + ') no-repeat 0 0 / cover'
-        }"
-      >
+      <div class="ad-unit" *ngFor="let adUnit of adUnits">
         <p
           class="ad-unit__subtitle"
           [ngStyle]="{ color: 'var(--color-' + adUnit.subtitleColor + ')' }"
@@ -24,3 +18,6 @@
     </div>
   </div>
 </section>
+<!-- [ngStyle]="{
+          background: 'url(' + adUnit.backgroundUrl + ') no-repeat 0 0 / cover'
+        }" -->
