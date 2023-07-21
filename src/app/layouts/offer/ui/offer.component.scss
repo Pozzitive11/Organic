@@ -5,8 +5,13 @@
   &__top {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
   &__title {
     color: var(--color-white);
+  }
+  &__list {
+    display: flex;
+    gap: 20px;
   }
 }

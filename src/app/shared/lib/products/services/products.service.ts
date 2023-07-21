@@ -13,6 +13,6 @@ export class ProductsService extends ApiService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.get<Product[]>().pipe(tap((data) => console.log(data)));
+    return this.get<Product[]>();
   }
 }

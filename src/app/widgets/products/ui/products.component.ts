@@ -4,6 +4,7 @@ import { ProductComponent } from '@entities/product';
 import { Product } from '@shared/lib/products/models/products.model';
 import { ProductsService } from '@shared/lib/products/services';
 import { ButtonComponent } from '@shared/ui/button/button.component';
+import { take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -17,7 +18,7 @@ export class ProductsComponent {
 
   constructor(private productsService: ProductsService) {
     this.productsService.getProducts().subscribe((data) => {
-      this.products = data;
+      this.products = data.slice(0, 8);
     });
   }
 }
