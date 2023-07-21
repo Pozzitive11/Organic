@@ -7,3 +7,7 @@ export interface Product {
   rating: number;
   tag: string;
 }
+
+export interface ProductState {
+  products: Product[];
+}

@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductComponent } from '@entities/product';
-import { Product } from '@shared/lib/products/models/products.model';
+import { Product } from '@entities/product/models/products.model';
+import { ProductActions } from '@entities/product/store';
 import { ProductsService } from '@shared/lib/products/services';
 import { ButtonComponent } from '@shared/ui/button/button.component';
-import { take, tap } from 'rxjs';
+import { Observable, take, tap } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectProducts } from '@entities/product/store/product.selectors';
 
 @Component({
   selector: 'app-products',
@@ -13,12 +16,13 @@ import { take, tap } from 'rxjs';
   standalone: true,
   imports: [CommonModule, ButtonComponent, ProductComponent],
 })
-export class ProductsComponent {
-  products: Product[] = [];
+export class ProductsComponent implements OnInit {
+  products$: Observable<Product[]>;
 
-  constructor(private productsService: ProductsService) {
-    this.productsService.getProducts().subscribe((data) => {
-      this.products = data.slice(0, 8);
-    });
+  constructor(private productsService: ProductsService, private store: Store) {}
+
+  ngOnInit() {
+    this.store.dispatch(ProductActions.getProducts());
+    this.products$ = this.store.select(selectProducts);
   }
 }

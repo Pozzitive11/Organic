@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductComponent } from '@entities/product';
-import { Product } from '@shared/lib/products/models/products.model';
+import { Product } from '@entities/product/models/products.model';
 import { ProductsService } from '@shared/lib/products/services';
 import { ButtonComponent } from '@shared/ui/button/button.component';
 
@@ -15,9 +15,5 @@ import { ButtonComponent } from '@shared/ui/button/button.component';
 export class OfferComponent {
   products: Product[] = [];
 
-  constructor(private productsService: ProductsService) {
-    this.productsService.getProducts().subscribe((data) => {
-      this.products = data.slice(0, 4);
-    });
-  }
+  constructor(private productsService: ProductsService) {}
 }

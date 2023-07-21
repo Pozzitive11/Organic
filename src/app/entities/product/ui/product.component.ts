@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '@shared/lib/products/models/products.model';
+import { Product } from '@entities/product/models/products.model';
 import { ProductPipe } from '../pipes';
 
 @Component({
