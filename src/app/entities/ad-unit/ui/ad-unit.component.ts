@@ -29,7 +29,7 @@ export class AdUnitComponent {
       backgroundUrl: '/assets/ad-unit/unit-2.png',
       subtitle: 'Natural!!',
       subtitleColor: 'green',
-      title: 'Get Garden Fresh Fruits',
+      title: 'Get 10% off on Vegetables',
       titleColor: 'primary',
     },
   ];
