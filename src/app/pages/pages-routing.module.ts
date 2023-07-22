@@ -6,7 +6,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
   {
@@ -14,11 +14,7 @@ const routes: Routes = [
     component: HomePageComponent,
     canActivate: [],
   },
-  {
-    path: 'product',
-    component: ProductPageComponent,
-    canActivate: [],
-  },
+  { path: 'product/:productId', component: ProductPageComponent },
   // {
   //   path: "login",
   //   loadComponent: () => import("").then((m) => m.LoginPageComponent),

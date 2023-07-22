@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ProductComponent } from '@entities/product';
+import { Product } from '@entities/product/models/products.model';
 import { ProductActions, selectProducts } from '@entities/product/store';
 import { Store, select } from '@ngrx/store';
-import { Product } from '@shared/lib/products/models/products.model';
 import { ProductsService } from '@shared/lib/products/services';
 import { ButtonComponent } from '@shared/ui/button/button.component';
 import { Observable, take } from 'rxjs';
@@ -13,7 +14,7 @@ import { Observable, take } from 'rxjs';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
   standalone: true,
-  imports: [CommonModule, ButtonComponent, ProductComponent],
+  imports: [CommonModule, ButtonComponent, ProductComponent, RouterModule],
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];

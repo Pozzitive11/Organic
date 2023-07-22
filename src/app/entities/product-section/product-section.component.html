@@ -2,26 +2,29 @@
   <div class="container">
     <div class="product-section__inner">
       <div class="product-section__left">
-        <div class="product-section__tag">Millets</div>
+        <div class="product-section__tag">{{ product.tag }}</div>
         <img
-          src="assets/products/white-nuts.png"
+          [src]="'assets/products/' + product.img"
           alt="Health Pistachios"
           class="product-section__img"
           width="600"
           height="600"
+          [alt]="product.name"
         />
       </div>
       <div class="product-section__right">
-        <h1 class="product-section__title">Health Pistachios</h1>
-        <div class="product-section__rating">8888888</div>
+        <h1 class="product-section__title">{{ product.name }}</h1>
+        <div class="product-section__rating">{{ product.rating }}</div>
         <div class="product-section__price">
-          <span class="product-section__price-old">{{ "$20.00" }}</span>
-          <span class="product__price-new">{{ "$13.00" }}</span>
+          <span class="product-section__price-old">{{
+            product.old_price | productPrice
+          }}</span>
+          <span class="product__price-new">{{
+            product.new_price | productPrice
+          }}</span>
         </div>
         <p class="product-section__description">
-          Simply dummy text of the printing and typesetting industry. Lorem had
-          ceased to been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley.
+          {{ product.description }}
         </p>
         <app-calculate-products-quantity></app-calculate-products-quantity>
       </div>

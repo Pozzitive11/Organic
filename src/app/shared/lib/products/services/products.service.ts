@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '@basic/api';
 import { Observable, tap } from 'rxjs';
-import { Product } from '../models/products.model';
 import { Store } from '@ngrx/store';
 import { ProductActions } from '@entities/product/store';
+import { Product } from '@entities/product/models/products.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,4 +21,6 @@ export class ProductsService extends ApiService {
   setProducts(products: Product[]): void {
     this.store.dispatch(ProductActions.getProductsSuccess({ products }));
   }
+
+  getProductById() {}
 }

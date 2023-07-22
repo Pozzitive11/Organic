@@ -1,6 +1,10 @@
-<div class="product">
+<li class="product">
   <p class="product__tag">{{ product.tag }}</p>
-  <img class="product__img" [src]="'assets/products/' + product.img" />
+  <img
+    class="product__img"
+    [src]="'assets/products/' + product.img"
+    [alt]="product.name"
+  />
   <h3 class="product__title">{{ product.name }}</h3>
   <div class="product__info">
     <div class="product__price">
@@ -13,4 +17,4 @@
     </div>
     <div class="product__rating">{{ product.rating }}</div>
   </div>
-</div>
+</li>
