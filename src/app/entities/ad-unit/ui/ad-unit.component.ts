@@ -19,14 +19,14 @@ interface AdUnit {
 export class AdUnitComponent {
   adUnits: AdUnit[] = [
     {
-      backgroundUrl: 'assets/ad-unit/ad-unit-1.png',
+      backgroundUrl: 'assets/ad-unit/unit-1.png',
       subtitle: 'Natural!!',
       subtitleColor: 'white',
       title: 'Get Garden Fresh Fruits',
       titleColor: 'white',
     },
     {
-      backgroundUrl: '/assets/ad-unit/ad-unit-2.png',
+      backgroundUrl: '/assets/ad-unit/unit-2.png',
       subtitle: 'Natural!!',
       subtitleColor: 'green',
       title: 'Get Garden Fresh Fruits',
