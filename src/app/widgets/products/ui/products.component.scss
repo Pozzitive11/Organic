@@ -11,6 +11,8 @@
   }
   &__button {
     @include flex-all-center;
+    width: 220px;
+    margin: 0 auto;
   }
   &__list {
     display: grid;

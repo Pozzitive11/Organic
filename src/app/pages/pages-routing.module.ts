@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,11 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent,
+    canActivate: [],
+  },
+  {
+    path: 'product',
+    component: ProductPageComponent,
     canActivate: [],
   },
   // {

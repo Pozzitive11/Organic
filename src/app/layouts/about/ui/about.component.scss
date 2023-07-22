@@ -34,4 +34,9 @@
     line-height: 29px;
     color: var(--color-primary);
   }
+
+  &__button {
+    display: block;
+    width: 220px;
+  }
 }
