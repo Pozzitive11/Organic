@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from '@layouts/footer';
 import { NewsletterComponent } from '@layouts/newsletter';
 import { LogoComponent } from '@widgets/logo';
+import { ProductEffects, productReducer } from '@entities/product/store';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +24,8 @@ import { LogoComponent } from '@widgets/logo';
     NewsletterComponent,
     FooterComponent,
     HttpClientModule,
+    StoreModule.forRoot({ products: productReducer }),
+    EffectsModule.forRoot([ProductEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
