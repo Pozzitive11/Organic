@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './ui';
 import { PagesRoutingModule } from '@pages/pages-routing.module';
-import { HeaderModule } from '@layouts/header/header.module';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from '@layouts/footer';
 import { NewsletterComponent } from '@layouts/newsletter';
@@ -13,6 +12,7 @@ import { ProductEffects, productReducer } from '@entities/product/store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from '@layouts/header';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     PagesRoutingModule,
     LogoComponent,
-    HeaderModule,
+    HeaderComponent,
     NewsletterComponent,
     FooterComponent,
     HttpClientModule,
