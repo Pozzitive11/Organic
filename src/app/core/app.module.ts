@@ -12,6 +12,7 @@ import { LogoComponent } from '@widgets/logo';
 import { ProductEffects, productReducer } from '@entities/product/store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { EffectsModule } from '@ngrx/effects';
     NewsletterComponent,
     FooterComponent,
     HttpClientModule,
+    RouterModule,
     StoreModule.forRoot({ products: productReducer }),
     EffectsModule.forRoot([ProductEffects]),
   ],
