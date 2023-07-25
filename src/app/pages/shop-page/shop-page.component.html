@@ -1,0 +1,8 @@
+<app-banner bgImage="assets/shop/shop-banner.png" title="Shop"></app-banner>
+<div class="container">
+  <ul class="product-page__list">
+    <li class="product-page__item" *ngFor="let product of products$ | async">
+      <app-product [product]="product"></app-product>
+    </li>
+  </ul>
+</div>

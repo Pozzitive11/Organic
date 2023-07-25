@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ShopPageComponent } from './shop-page/shop-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
     canActivate: [],
   },
   { path: 'product/:productId', component: ProductPageComponent },
+  {
+    path: 'shop',
+    component: ShopPageComponent,
+  },
   {
     path: 'not-found',
     component: NotFoundComponent,
