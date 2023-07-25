@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
     this.store.dispatch(ProductActions.getProducts());
 
     this.store.select(selectProducts).subscribe((products) => {
-      this.products = products.slice(0, 8);
+      this.products = products.slice(0, 8); // map
     });
   }
 }

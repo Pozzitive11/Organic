@@ -25,11 +25,7 @@ export class ProductSectionComponent {
   product: Product;
   productId: number;
 
-  constructor(
-    private route: ActivatedRoute,
-    private productsService: ProductsService,
-    private store: Store
-  ) {}
+  constructor(private route: ActivatedRoute, private store: Store) {}
 
   ngOnInit(): void {
     this.store.dispatch(ProductActions.getProducts());

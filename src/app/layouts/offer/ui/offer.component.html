@@ -11,7 +11,7 @@
       </app-button>
     </div>
     <ul class="offer__list">
-      <li class="offer__item" *ngFor="let product of products">
+      <li class="offer__item" *ngFor="let product of products$ | async">
         <app-product [product]="product"></app-product>
       </li>
     </ul>
