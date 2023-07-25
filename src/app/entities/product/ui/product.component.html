@@ -9,10 +9,10 @@
   <div class="product__info">
     <div class="product__price">
       <span class="product__price-old">{{
-        product.old_price | productPrice
+        product.old_price | currency : "USD" : "symbol"
       }}</span>
       <span class="product__price-new">{{
-        product.new_price | productPrice
+        product.new_price | currency : "USD" : "symbol"
       }}</span>
     </div>
     <div class="product__rating">{{ product.rating }}</div>
