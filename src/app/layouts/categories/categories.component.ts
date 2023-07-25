@@ -17,11 +17,20 @@ import { Observable, map, tap } from 'rxjs';
 export class CategoriesComponent implements OnInit {
   products$: Observable<Product[]> = this.store.pipe(
     select(selectProducts),
-    map((products) => products.slice(0, 8))
+    map((products) => products.slice(0, this.visibleProductCount))
   );
+  visibleProductCount = 8;
   constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.store.dispatch(ProductActions.getProducts());
+  }
+
+  showMore() {
+    this.visibleProductCount += 4;
+    this.products$ = this.store.pipe(
+      select(selectProducts),
+      map((products) => products.slice(0, this.visibleProductCount))
+    );
   }
 }

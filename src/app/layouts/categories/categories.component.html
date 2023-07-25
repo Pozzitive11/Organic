@@ -3,7 +3,11 @@
     <div class="subtitle categories__subtitle">Categories</div>
     <h2 class="title categories__title">Our Products</h2>
     <app-products [products]="products$ | async"></app-products>
-    <app-button routerLink="/shop" class="categories__button" type="primary"
+    <app-button
+      (click)="showMore()"
+      routerLink="/shop"
+      class="categories__button"
+      type="primary"
       >Load more <img src="assets/btn-arrow.svg" alt=""
     /></app-button>
   </div>
