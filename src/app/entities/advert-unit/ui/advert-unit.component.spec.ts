@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdUnitComponent } from './ad-unit.component';
+import { AdUnitComponent } from './advert-unit.component';
 
 describe('AdUnitComponent', () => {
   let component: AdUnitComponent;
@@ -8,9 +8,8 @@ describe('AdUnitComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdUnitComponent ]
-    })
-    .compileComponents();
+      declarations: [AdUnitComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AdUnitComponent);
     component = fixture.componentInstance;

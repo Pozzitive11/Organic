@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AdUnitComponent } from '@entities/ad-unit';
+import { AdvertUnitComponent } from '@entities/advert-unit';
 import { AboutComponent } from '@layouts/about';
 import { CategoriesComponent } from '@layouts/categories/categories.component';
 import { EcoFriendlyComponent } from '@layouts/eco-friendly';
@@ -16,7 +16,7 @@ import { ProductsComponent } from '@widgets/products';
   standalone: true,
   imports: [
     HeroComponent,
-    AdUnitComponent,
+    AdvertUnitComponent,
     AboutComponent,
     TestimonialComponent,
     OfferComponent,

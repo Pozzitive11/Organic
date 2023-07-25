@@ -1,0 +1,27 @@
+<section class="advert-units">
+  <div class="container">
+    <div class="advert-units__items">
+      <div
+        class="advert-unit"
+        *ngFor="let advertUnit of advertUnits"
+        [ngStyle]="{
+          background:
+            'url(' + advertUnit.backgroundUrl + ') no-repeat 0 0 / cover'
+        }"
+      >
+        <p
+          class="advert-unit__subtitle"
+          [ngStyle]="{ color: 'var(--color-' + advertUnit.subtitleColor + ')' }"
+        >
+          {{ advertUnit.subtitle }}
+        </p>
+        <h3
+          class="advert-unit__title"
+          [ngStyle]="{ color: 'var(--color-' + advertUnit.titleColor + ')' }"
+        >
+          {{ advertUnit.title }}
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
