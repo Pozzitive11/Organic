@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AdUnitComponent } from '@entities/ad-unit';
 import { AboutComponent } from '@layouts/about';
+import { CategoriesComponent } from '@layouts/categories/categories.component';
 import { EcoFriendlyComponent } from '@layouts/eco-friendly';
 import { HeroComponent } from '@layouts/hero';
 import { NewsletterComponent } from '@layouts/newsletter';
@@ -17,11 +18,11 @@ import { ProductsComponent } from '@widgets/products';
     HeroComponent,
     AdUnitComponent,
     AboutComponent,
-    ProductsComponent,
     TestimonialComponent,
     OfferComponent,
     EcoFriendlyComponent,
     NewsletterComponent,
+    CategoriesComponent,
   ],
 })
 export class HomePageComponent {}

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ProductComponent } from '@entities/product';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Product } from '@entities/product/models/products.model';
-import { selectProducts } from '@entities/product/store';
+import { ProductActions, selectProducts } from '@entities/product/store';
 import { Store, select } from '@ngrx/store';
 import { ButtonComponent } from '@shared/ui/button/button.component';
-import { map } from 'rxjs';
+import { ProductsComponent } from '@widgets/products';
+import { map, tap } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
@@ -13,13 +14,17 @@ import { Observable } from 'rxjs/internal/Observable';
   templateUrl: './offer.component.html',
   styleUrls: ['./offer.component.scss'],
   standalone: true,
-  imports: [CommonModule, ButtonComponent, ProductComponent],
+  imports: [CommonModule, ButtonComponent, ProductsComponent, RouterModule],
 })
-export class OfferComponent {
+export class OfferComponent implements OnInit {
   products$: Observable<Product[]> = this.store.pipe(
     select(selectProducts),
-    map((data) => data.slice(0, 4))
+    map((products) => products.slice(0, 4))
   );
 
   constructor(private store: Store) {}
+
+  ngOnInit(): void {
+    this.store.dispatch(ProductActions.getProducts());
+  }
 }

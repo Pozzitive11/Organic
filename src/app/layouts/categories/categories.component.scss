@@ -1,0 +1,17 @@
+@import "src/app/shared/styles/mixins";
+
+.categories {
+  padding: 176px 0 200px;
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  &__subtitle {
+    text-align: center;
+  }
+  &__button {
+    @include flex-all-center;
+    width: 220px;
+    margin: 0 auto;
+  }
+}

@@ -6,11 +6,12 @@ import { ProductActions, selectProducts } from '@entities/product/store';
 import { Store, select } from '@ngrx/store';
 import { ProductComponent } from '@entities/product';
 import { Observable, tap } from 'rxjs';
+import { ProductsComponent } from '@widgets/products';
 
 @Component({
   selector: 'app-shop-page',
   standalone: true,
-  imports: [CommonModule, BannerComponent, ProductComponent],
+  imports: [CommonModule, BannerComponent, ProductsComponent],
   templateUrl: './shop-page.component.html',
   styleUrls: ['./shop-page.component.scss'],
 })

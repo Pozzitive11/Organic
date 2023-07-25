@@ -5,7 +5,6 @@ import { CalculateProductsQuantityComponent } from '@features/calculate-products
 import { ButtonComponent } from '@shared/ui/button/button.component';
 import { Product } from '@entities/product/models/products.model';
 import { ActivatedRoute } from '@angular/router';
-import { ProductsService } from '@shared/lib/products/services';
 import { Store } from '@ngrx/store';
 import { ProductActions, selectProducts } from '@entities/product/store';
 

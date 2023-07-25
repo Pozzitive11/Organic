@@ -5,14 +5,14 @@
         <div class="subtitle offer__subtitle">Offer</div>
         <h2 class="title offer__title">We Offer Organic For You</h2>
       </div>
-      <app-button class="offer__button" type="secondary">
+      <app-button routerLink="/shop" class="offer__button" type="secondary">
         View All Products
         <img src="assets/btn-arrow.svg" alt="" />
       </app-button>
     </div>
     <ul class="offer__list">
-      <li class="offer__item" *ngFor="let product of products$ | async">
-        <app-product [product]="product"></app-product>
+      <li class="offer__item">
+        <app-products [products]="products$ | async"></app-products>
       </li>
     </ul>
   </div>
