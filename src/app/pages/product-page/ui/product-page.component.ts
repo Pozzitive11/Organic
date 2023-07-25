@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductSectionComponent } from '@entities/product-section/product-section.component';
-import { FooterComponent } from '@layouts/footer';
+import { ProductSectionComponent } from '@entities/product-section';
 import { BannerComponent } from '@shared/ui/banner/banner.component';
 
 @Component({

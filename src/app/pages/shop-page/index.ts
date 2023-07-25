@@ -1,0 +1,1 @@
+export { ShopPageComponent } from './ui';

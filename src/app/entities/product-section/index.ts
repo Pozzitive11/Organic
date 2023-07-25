@@ -1,0 +1,1 @@
+export { ProductSectionComponent } from './ui';

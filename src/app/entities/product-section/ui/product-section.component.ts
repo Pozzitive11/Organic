@@ -1,22 +1,17 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ProductPipe } from '@entities/product/pipes';
-import { CalculateProductsQuantityComponent } from '@features/calculate-products-quantity/calculate-products-quantity.component';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ButtonComponent } from '@shared/ui/button/button.component';
 import { Product } from '@entities/product/models/products.model';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ProductActions, selectProducts } from '@entities/product/store';
+import { CalculateProductsQuantityComponent } from '@features/calculate-products-quantity';
 
 @Component({
   selector: 'app-product-section',
   standalone: true,
-  imports: [
-    CommonModule,
-    ProductPipe,
-    CalculateProductsQuantityComponent,
-    ButtonComponent,
-  ],
+  imports: [CommonModule, CalculateProductsQuantityComponent, ButtonComponent],
+  providers: [CurrencyPipe],
   templateUrl: './product-section.component.html',
   styleUrls: ['./product-section.component.scss'],
 })

@@ -1,0 +1,1 @@
+export { CalculateProductsQuantityComponent } from './ui';
