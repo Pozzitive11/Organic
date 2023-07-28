@@ -4,6 +4,7 @@ import { HomePageComponent } from './home';
 import { ProductPageComponent } from './product-page';
 import { ShopPageComponent } from './shop-page';
 import { NotFoundComponent } from './not-found';
+import { AboutPageComponent } from './about-page';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'shop',
     component: ShopPageComponent,
+  },
+  {
+    path: 'about',
+    component: AboutPageComponent,
   },
   {
     path: 'not-found',

@@ -1,0 +1,1 @@
+export { AboutPageOfferComponent } from './ui';

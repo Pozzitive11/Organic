@@ -1,0 +1,30 @@
+.offer {
+  padding: 188px 0;
+  text-align: center;
+  background-color: var(--color-primary);
+  &__title {
+    margin-bottom: 33px;
+    color: var(--color-white);
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    &-img {
+      margin-bottom: 24px;
+      border-radius: 24px;
+    }
+
+    &-title {
+      color: var(--color-white);
+      font-family: var(--font-roboto);
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}
