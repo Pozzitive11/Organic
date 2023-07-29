@@ -5,6 +5,7 @@ import { ProductPageComponent } from './product-page';
 import { ShopPageComponent } from './shop-page';
 import { NotFoundComponent } from './not-found';
 import { AboutPageComponent } from './about-page';
+import { NewsPageComponent } from './news-page';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutPageComponent,
+  },
+  {
+    path: 'news',
+    component: NewsPageComponent,
   },
   {
     path: 'not-found',
