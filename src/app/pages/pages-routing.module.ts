@@ -6,6 +6,7 @@ import { ShopPageComponent } from './shop-page';
 import { NotFoundComponent } from './not-found';
 import { AboutPageComponent } from './about-page';
 import { NewsPageComponent } from './news-page';
+import { NewsSinglePageComponent } from './news-single-page';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'news',
     component: NewsPageComponent,
+  },
+  {
+    path: 'news-1',
+    component: NewsSinglePageComponent,
   },
   {
     path: 'not-found',

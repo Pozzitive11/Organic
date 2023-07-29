@@ -1,0 +1,1 @@
+export { NewsSinglePageComponent } from './ui';
