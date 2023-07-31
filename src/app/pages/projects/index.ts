@@ -1,0 +1,1 @@
+export { ProjectsPageComponent } from './ui';

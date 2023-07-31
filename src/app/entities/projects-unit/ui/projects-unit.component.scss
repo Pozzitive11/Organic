@@ -1,0 +1,52 @@
+.projects-unit {
+  position: relative;
+  display: block;
+  max-width: 451px;
+  height: 421px;
+  border-radius: 24px;
+
+  &:hover > .projects-unit__active {
+    display: flex;
+  }
+
+  &__img {
+    margin-bottom: 21px;
+  }
+
+  &__title {
+    color: var(--color-primary);
+    font-family: var(--font-roboto);
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+  }
+
+  &__active {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 401px;
+    height: 375px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.91);
+    border-radius: 24px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 46px;
+    height: 46px;
+  }
+}

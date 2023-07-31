@@ -7,6 +7,8 @@ import { NotFoundComponent } from './not-found';
 import { AboutPageComponent } from './about-page';
 import { NewsPageComponent } from './news-page';
 import { NewsSinglePageComponent } from './news-single-page';
+import { ProjectsPageComponent } from './projects';
+import { ProjectsSinglePageComponent } from './projects-single-page';
 
 const routes: Routes = [
   {
@@ -35,6 +37,14 @@ const routes: Routes = [
   {
     path: 'news-1',
     component: NewsSinglePageComponent,
+  },
+  {
+    path: 'projects',
+    component: ProjectsPageComponent,
+  },
+  {
+    path: 'projects-1',
+    component: ProjectsSinglePageComponent,
   },
   {
     path: 'not-found',
