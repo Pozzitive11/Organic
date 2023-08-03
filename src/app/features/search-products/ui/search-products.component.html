@@ -4,17 +4,19 @@
     placeholder="Search"
     type="text"
     [(ngModel)]="searchInput"
-    (ngModelChange)="searchProducts()"
   />
   <button class="search__button">
     <img src="assets/img/search-btn.svg" />
   </button>
-  <div *ngIf="products$">
-    <ul>
+  <div *ngIf="searchInput">
+    <ul class="search__list">
       <li
+        class="search__item"
         *ngFor="let product of products$ | async | productSearch : searchInput"
+        [routerLink]="['/product', product.id]"
+        (click)="productClick()"
       >
-        {{ product.name }}
+        <app-product-search [product]="product"></app-product-search>
       </li>
     </ul>
   </div>

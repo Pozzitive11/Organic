@@ -5,13 +5,21 @@ import { selectProducts, ProductActions } from '@entities/product/store';
 import { select, Store } from '@ngrx/store';
 import { Observable, filter, map, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { ProductSearchPipe } from '../search-products.pipe';
+import { ProductSearchPipe } from '../pipes';
+import { ProductSearchComponent } from '@entities/product-search';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-search-products',
   templateUrl: './search-products.component.html',
   styleUrls: ['./search-products.component.scss'],
-  imports: [CommonModule, FormsModule, ProductSearchPipe],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ProductSearchPipe,
+    ProductSearchComponent,
+    RouterModule,
+  ],
   standalone: true,
 })
 export class SearchProductsComponent implements OnInit {
@@ -23,5 +31,7 @@ export class SearchProductsComponent implements OnInit {
     this.store.dispatch(ProductActions.getProducts());
   }
 
-  searchProducts() {}
+  productClick() {
+    this.searchInput = '';
+  }
 }
