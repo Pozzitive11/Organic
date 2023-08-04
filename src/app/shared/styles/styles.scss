@@ -25,6 +25,12 @@ body {
   margin: 0 auto;
 }
 
+.container-news {
+  max-width: var(--container-news-width);
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 .btn {
   @include flex-all-center;
 

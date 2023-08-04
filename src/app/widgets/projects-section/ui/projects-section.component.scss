@@ -1,0 +1,8 @@
+.project-section {
+  margin-bottom: 230px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 150px 30px;
+  }
+}
