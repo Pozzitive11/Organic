@@ -15,6 +15,8 @@
         product.new_price | currency : "USD" : "symbol"
       }}</span>
     </div>
-    <div class="product__rating">{{ product.rating }}</div>
+    <div class="product__rating">
+      <app-star-rating [initialStars]="product.rating"></app-star-rating>
+    </div>
   </div>
 </a>

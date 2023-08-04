@@ -1,0 +1,13 @@
+.custom-rating {
+  font-size: 24px;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease-in-out;
+}
+
+.star.filled {
+  color: orange;
+}

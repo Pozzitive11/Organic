@@ -14,7 +14,9 @@
       </div>
       <div class="product-section__right">
         <h1 class="product-section__title">{{ product.name }}</h1>
-        <div class="product-section__rating">{{ product.rating }}</div>
+        <div class="product-section__rating">
+          <app-star-rating [initialStars]="product.rating"></app-star-rating>
+        </div>
         <div class="product-section__price">
           <span class="product-section__price-old">{{
             product.old_price | currency : "USD" : "symbol"

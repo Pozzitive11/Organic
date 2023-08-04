@@ -6,11 +6,17 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ProductActions, selectProducts } from '@entities/product/store';
 import { CalculateProductsQuantityComponent } from '@features/calculate-products-quantity';
+import { StarRatingComponent } from '@shared/ui/star-rating/star-rating.component';
 
 @Component({
   selector: 'app-product-section',
   standalone: true,
-  imports: [CommonModule, CalculateProductsQuantityComponent, ButtonComponent],
+  imports: [
+    CommonModule,
+    CalculateProductsQuantityComponent,
+    ButtonComponent,
+    StarRatingComponent,
+  ],
   providers: [CurrencyPipe],
   templateUrl: './product-section.component.html',
   styleUrls: ['./product-section.component.scss'],
