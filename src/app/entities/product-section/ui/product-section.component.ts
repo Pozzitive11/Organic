@@ -3,11 +3,14 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ButtonComponent } from '@shared/ui/button/button.component';
 import { Product } from '@entities/product/models/products.model';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { ProductActions, selectProducts } from '@entities/product/store';
 import { CalculateProductsQuantityComponent } from '@features/calculate-products-quantity';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription, tap } from 'rxjs';
 import { StarRatingComponent } from '@shared/ui/star-rating/star-rating.component';
+import { CartService } from '@entities/cart/services/cart.service';
+import { selectCartProducts } from '@entities/cart/store';
+import { CartProduct, CartState } from '@entities/cart/models';
 
 @Component({
   selector: 'app-product-section',
@@ -25,12 +28,19 @@ import { StarRatingComponent } from '@shared/ui/star-rating/star-rating.componen
 export class ProductSectionComponent implements OnInit, OnDestroy {
   product: Product;
   private productSubscription: Subscription;
+  cartProducts$: Observable<CartProduct[]> = this.store.pipe(
+    select(selectCartProducts),
+    tap((data) => console.log(data))
+  );
 
-  constructor(private route: ActivatedRoute, private store: Store) {}
+  constructor(
+    private route: ActivatedRoute,
+    private store: Store,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.store.dispatch(ProductActions.getProducts());
-
     this.route.params.subscribe((params) => {
       const productId = +params['productId'];
       this.productSubscription = this.store
@@ -41,8 +51,16 @@ export class ProductSectionComponent implements OnInit, OnDestroy {
           }
         });
     });
+    this.cartProducts$.subscribe(); // ???
   }
-
+  addToCartClicked(quantity: number) {
+    const productToCart = {
+      id: this.product.id,
+      quantity,
+      price: this.product.new_price,
+    };
+    this.cartService.addToCart(productToCart);
+  }
   ngOnDestroy(): void {
     if (this.productSubscription) {
       this.productSubscription.unsubscribe();

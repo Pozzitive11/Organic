@@ -28,7 +28,9 @@
         <p class="product-section__description">
           {{ product.description }}
         </p>
-        <app-calculate-products-quantity></app-calculate-products-quantity>
+        <app-calculate-products-quantity
+          (addToCartClicked)="addToCartClicked($event)"
+        ></app-calculate-products-quantity>
       </div>
     </div>
     <div class="product-section__info">

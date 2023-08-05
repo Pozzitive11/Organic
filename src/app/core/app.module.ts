@@ -13,7 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '@layouts/header';
-
+import { cartReducer } from '@entities/cart/store';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -26,7 +26,10 @@ import { HeaderComponent } from '@layouts/header';
     FooterComponent,
     HttpClientModule,
     RouterModule,
-    StoreModule.forRoot({ products: productReducer }),
+    StoreModule.forRoot({
+      cartProducts: cartReducer,
+      products: productReducer,
+    }),
     EffectsModule.forRoot([ProductEffects]),
   ],
   providers: [],

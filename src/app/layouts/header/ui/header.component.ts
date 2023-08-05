@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CartComponent } from '@entities/cart';
 import { SearchProductsComponent } from '@features/search-products';
-import { CartComponent } from '@widgets/cart';
 import { LogoComponent } from '@widgets/logo';
 
 @Component({
@@ -18,6 +18,4 @@ import { LogoComponent } from '@widgets/logo';
     LogoComponent,
   ],
 })
-export class HeaderComponent {
-  logo = 'src/img/logo.svg';
-}
+export class HeaderComponent {}

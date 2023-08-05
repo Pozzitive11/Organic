@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Product } from '@entities/product/models/products.model';
 import { selectProducts, ProductActions } from '@entities/product/store';
 import { select, Store } from '@ngrx/store';
-import { Observable, filter, map, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ProductSearchPipe } from '../pipes';
 import { ProductSearchComponent } from '@entities/product-search';
