@@ -9,6 +9,7 @@ import { NewsPageComponent } from './news-page';
 import { NewsSinglePageComponent } from './news-single-page';
 import { ProjectsPageComponent } from './projects';
 import { ProjectsSinglePageComponent } from './projects-single-page';
+import { OrderPageComponent } from './order-page';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'projects-1',
     component: ProjectsSinglePageComponent,
+  },
+  {
+    path: 'order',
+    component: OrderPageComponent,
   },
   {
     path: 'not-found',

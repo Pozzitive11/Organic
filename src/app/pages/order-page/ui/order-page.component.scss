@@ -1,0 +1,21 @@
+.order {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+  &__text {
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 28px;
+  }
+}
+.order__list {
+  margin-bottom: 32px;
+}
