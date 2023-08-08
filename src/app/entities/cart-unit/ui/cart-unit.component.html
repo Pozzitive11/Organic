@@ -1,0 +1,26 @@
+<li class="cart-item">
+  <img
+    [src]="'assets/products/' + product.img"
+    [alt]="product.name"
+    class="cart-item__img"
+  />
+  <div class="cart-item_content">
+    <p class="title cart-item__title">{{ product.name }}</p>
+    <div class="cart-item__price">
+      <span class="cart-item__price-new">{{
+        product.new_price | currency : "USD" : "symbol"
+      }}</span>
+    </div>
+    <div class="cart-item__rating">
+      <app-star-rating [initialStars]="product.rating"></app-star-rating>
+    </div>
+
+    <app-calculate-products-quantity
+      [quantity]="product.quantity"
+      [showAddToCartButton]="false"
+    ></app-calculate-products-quantity>
+  </div>
+  <button class="cart-item__delete" (click)="deleteProduct()">
+    <img src="assets/products/trash.svg" />
+  </button>
+</li>

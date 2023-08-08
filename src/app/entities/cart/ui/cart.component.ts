@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Observable, tap } from 'rxjs';
-import { CartProduct } from '../models';
-import { selectCartProducts } from '../store';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,16 +9,12 @@ import { selectCartProducts } from '../store';
 })
 export class CartComponent {
   cartProductsCount = 0;
-  cartProducts$: Observable<CartProduct[]> = this.store.pipe(
-    select(selectCartProducts),
-    tap((products) => {
-      this.cartProductsCount = products.length;
-      console.log(products);
-    })
-  );
-  constructor(private store: Store) {}
+
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartProducts$.subscribe(); // ???
+    this.cartService
+      .getCartProductsCount()
+      .subscribe((productsCount) => (this.cartProductsCount = productsCount));
   }
 }

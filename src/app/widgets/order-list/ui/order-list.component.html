@@ -1,0 +1,9 @@
+<ul class="order__list">
+  <app-cart-unit
+    *ngFor="let productToBuy of productsToBuy"
+    [product]="productToBuy"
+  ></app-cart-unit>
+  <div class="title fullprice">
+    Together: {{ fullPrice | currency : "USD" : "symbol" }}
+  </div>
+</ul>
