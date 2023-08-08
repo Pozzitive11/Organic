@@ -7,11 +7,13 @@
     value="1"
     min="1"
   />
-  <app-button
-    type="primary"
-    class="calculate-products__button"
-    (click)="addToCart()"
-  >
-    Add To Cart
-  </app-button>
+  <ng-container *ngIf="showAddToCartButton">
+    <app-button
+      type="primary"
+      class="calculate-products__button"
+      (click)="addToCart()"
+    >
+      Add To Cart
+    </app-button>
+  </ng-container>
 </div>

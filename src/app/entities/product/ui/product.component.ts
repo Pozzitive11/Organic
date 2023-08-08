@@ -10,7 +10,6 @@ import { StarRatingComponent } from '@shared/ui/star-rating/star-rating.componen
   styleUrls: ['./product.component.scss'],
   standalone: true,
   imports: [CommonModule, RouterModule, RouterModule, StarRatingComponent],
-  providers: [CurrencyPipe],
 })
 export class ProductComponent {
   @Input() product: Product;

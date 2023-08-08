@@ -7,6 +7,7 @@ export interface Product {
   old_price: number;
   rating: number;
   tag: string;
+  quantity?: number;
 }
 
 export interface ProductState {

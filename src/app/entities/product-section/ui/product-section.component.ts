@@ -29,8 +29,7 @@ export class ProductSectionComponent implements OnInit, OnDestroy {
   product: Product;
   private productSubscription: Subscription;
   cartProducts$: Observable<CartProduct[]> = this.store.pipe(
-    select(selectCartProducts),
-    tap((data) => console.log(data))
+    select(selectCartProducts)
   );
 
   constructor(

@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AppState } from '@core/store';
-import { Product } from '@entities/product/models/products.model';
 import { Store } from '@ngrx/store';
 import { CartActions, selectCartProducts } from '../store';
-import { take } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import { CartProduct } from '../models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  private products: Product[] = [];
-
   constructor(private store: Store<AppState>) {
     const cartProduct = this.getProductsFromLocalStorage();
+
     if (cartProduct) {
       this.store.dispatch(
         CartActions.updateCartProducts({
@@ -51,15 +49,44 @@ export class CartService {
       });
   }
 
-  getProducts(): Product[] {
-    return this.products;
+  getProducts(): Observable<CartProduct[]> {
+    return this.store.select(selectCartProducts);
   }
 
-  clearCart(): void {
-    this.products = [];
+  deleteProduct(productId: number): void {
+    this.store
+      .select(selectCartProducts)
+      .pipe(take(1))
+      .subscribe((cartProducts) => {
+        const updatedCartProducts = cartProducts.filter(
+          (product) => product.id !== productId
+        );
+
+        this.store.dispatch(
+          CartActions.updateCartProducts({
+            cartProducts: updatedCartProducts,
+          })
+        );
+
+        this.addProductsToLocalStorage(updatedCartProducts);
+      });
   }
 
-  calculateTotal() {}
+  calculateTotal(): Observable<number> {
+    return this.store.select(selectCartProducts).pipe(
+      map((cartProducts) => {
+        return cartProducts.reduce((total, product) => {
+          return total + product.price * product.quantity;
+        }, 0);
+      })
+    );
+  }
+
+  getCartProductsCount(): Observable<number> {
+    return this.store
+      .select(selectCartProducts)
+      .pipe(map((products) => products.length));
+  }
 
   addProductsToLocalStorage(products: CartProduct[]): void {
     localStorage.setItem('cart', JSON.stringify(products));

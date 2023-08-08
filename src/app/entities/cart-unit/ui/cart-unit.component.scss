@@ -1,0 +1,33 @@
+.cart-item {
+  display: flex;
+  &__img {
+    width: 250px;
+    height: 250px;
+  }
+
+  &__title {
+    font-size: 25px;
+  }
+
+  &__price {
+    margin-bottom: 10px;
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    &-old {
+      text-decoration: line-through;
+      color: #b8b8b8;
+      margin-right: 8px;
+    }
+  }
+
+  &__delete {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+  }
+}

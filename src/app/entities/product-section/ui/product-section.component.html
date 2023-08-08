@@ -29,6 +29,7 @@
           {{ product.description }}
         </p>
         <app-calculate-products-quantity
+          [showAddToCartButton]="true"
           (addToCartClicked)="addToCartClicked($event)"
         ></app-calculate-products-quantity>
       </div>
