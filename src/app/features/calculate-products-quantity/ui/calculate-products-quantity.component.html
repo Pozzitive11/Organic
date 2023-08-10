@@ -6,6 +6,7 @@
     type="number"
     value="1"
     min="1"
+    (input)="changeQuantity()"
   />
   <ng-container *ngIf="showAddToCartButton">
     <app-button

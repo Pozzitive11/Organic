@@ -28,9 +28,6 @@ import { CartProduct, CartState } from '@entities/cart/models';
 export class ProductSectionComponent implements OnInit, OnDestroy {
   product: Product;
   private productSubscription: Subscription;
-  cartProducts$: Observable<CartProduct[]> = this.store.pipe(
-    select(selectCartProducts)
-  );
 
   constructor(
     private route: ActivatedRoute,
@@ -50,7 +47,6 @@ export class ProductSectionComponent implements OnInit, OnDestroy {
           }
         });
     });
-    this.cartProducts$.subscribe(); // ???
   }
   addToCartClicked(quantity: number) {
     const productToCart = {

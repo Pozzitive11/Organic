@@ -18,10 +18,16 @@ import { CartService } from '@entities/cart/services/cart.service';
 })
 export class CartUnitComponent {
   @Input() product: Product;
-  @Input() productQuantity: number;
 
   constructor(private cartService: CartService) {}
-
+  productQuantityChanged(quantity: number) {
+    const productToCart = {
+      id: this.product.id,
+      quantity,
+      price: this.product.new_price,
+    };
+    this.cartService.addToCart(productToCart);
+  }
   deleteProduct() {
     this.cartService.deleteProduct(this.product.id);
   }

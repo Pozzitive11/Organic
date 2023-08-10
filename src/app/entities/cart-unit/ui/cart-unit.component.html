@@ -18,6 +18,7 @@
     <app-calculate-products-quantity
       [quantity]="product.quantity"
       [showAddToCartButton]="false"
+      (inputChanged)="productQuantityChanged($event)"
     ></app-calculate-products-quantity>
   </div>
   <button class="cart-item__delete" (click)="deleteProduct()">
