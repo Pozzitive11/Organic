@@ -1,3 +1,5 @@
+@import "src/app/shared/styles/mixins";
+
 .hero {
   padding: 246px 0;
   background-image: url("/assets/hero/hero-bg.png");
@@ -5,8 +7,15 @@
   background-position: center;
   background-size: cover;
 
+  @include minidesk {
+    padding: 180px 0;
+  }
+  @include minitablet {
+    padding: 80px 0;
+  }
+
   &__title {
-    width: 530px;
+    max-width: 530px;
     margin-bottom: 23px;
     font-family: "Roboto";
     font-style: normal;
@@ -14,6 +23,11 @@
     font-size: 70px;
     line-height: 82px;
     color: var(--color-primary);
+
+    @include minitablet {
+      font-size: 50px;
+      line-height: 65px;
+    }
   }
 
   &__subtitle {

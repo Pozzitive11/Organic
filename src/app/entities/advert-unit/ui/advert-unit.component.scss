@@ -1,11 +1,25 @@
+@import "src/app/shared/styles/mixins";
+
 .advert-units {
-  margin-top: 154px;
-  margin-bottom: 190px;
+  padding-top: 154px;
+  padding-bottom: 190px;
+
+  @include middledesk {
+    padding: 100px 0;
+  }
+  @include minitablet {
+    padding: 50px 0;
+  }
 
   &__items {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include minitablet {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }
 
@@ -14,6 +28,18 @@
   padding: 110px 0 110px 55px;
   border-radius: 36px;
   background-color: rgb(34, 129, 184);
+
+  @include minidesk {
+    width: 570px;
+  }
+  @include tablet {
+    width: 490px;
+  }
+  @include mobile {
+    width: 350px;
+    padding: 55px 0 55px 55px;
+  }
+
   &__title {
     max-width: 258px;
     font-family: "Roboto";

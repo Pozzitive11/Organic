@@ -1,9 +1,14 @@
 <ul class="order__list">
-  <app-cart-unit
-    *ngFor="let productToBuy of productsToBuy"
-    [product]="productToBuy"
-  ></app-cart-unit>
-  <div class="title fullprice">
-    Together: {{ fullPrice | currency : "USD" : "symbol" }}
-  </div>
+  <ng-container *ngIf="productsToBuy.length > 0; else noProducts">
+    <app-cart-unit
+      *ngFor="let productToBuy of productsToBuy"
+      [product]="productToBuy"
+    ></app-cart-unit>
+    <div class="title fullprice">
+      Together: {{ fullPrice | currency : "USD" : "symbol" }}
+    </div>
+  </ng-container>
+  <ng-template #noProducts>
+    <div class="title order__list-empty">No products to display.</div>
+  </ng-template>
 </ul>

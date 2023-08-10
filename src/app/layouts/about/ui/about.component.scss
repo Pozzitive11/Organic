@@ -3,8 +3,29 @@
 .about {
   padding: 186px 0 113px;
   background-color: var(--color-alabaster);
+
+  @include middledesk {
+    padding: 100px 0;
+  }
+  @include minitablet {
+    padding: 50px 0;
+  }
   &__wrapper {
     @include flex;
+  }
+  &__img {
+    @include middledesk {
+      width: 711px;
+      height: 667px;
+    }
+    @include tablet {
+      width: 511px;
+      height: 467px;
+    }
+
+    @include minitablet {
+      display: none;
+    }
   }
   &__title {
     margin-bottom: 14px;
@@ -38,5 +59,8 @@
   &__button {
     display: block;
     width: 220px;
+    @include mobile {
+      width: 170px;
+    }
   }
 }

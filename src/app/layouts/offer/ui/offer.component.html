@@ -10,10 +10,6 @@
         <img src="assets/btn-arrow.svg" alt="" />
       </app-button>
     </div>
-    <ul class="offer__list">
-      <li class="offer__item">
-        <app-products [products]="products$ | async"></app-products>
-      </li>
-    </ul>
+    <app-products [products]="products$ | async"></app-products>
   </div>
 </section>

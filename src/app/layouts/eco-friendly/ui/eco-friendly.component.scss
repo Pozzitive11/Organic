@@ -2,15 +2,38 @@
 
 .eco-friendly {
   @include flex-v-center;
+  @include minidesk {
+    padding: 70px;
+    background-image: url("/assets/eco-friendly/eco-friendly-img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @include mobile {
+    padding: 20px;
+  }
   &__content {
     margin-left: -80px;
     padding: 89px 77px;
     background: var(--color-white);
     border-radius: 30px;
+
+    @include middledesk {
+      margin-left: -120px;
+      padding: 69px 57px;
+    }
+    @include minidesk {
+      margin-left: 0px;
+      padding: 69px 57px;
+    }
+    @include mobile {
+      padding: 20px;
+    }
   }
 
   &__title {
-    width: 500px;
+    max-width: 500px;
     margin-bottom: 35px;
   }
 

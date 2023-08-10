@@ -1,3 +1,5 @@
+@import "src/app/shared/styles/mixins";
+
 .product {
   display: flex;
   flex-direction: column;
@@ -6,6 +8,13 @@
   padding: 26px 17px 30px;
   border-radius: 36px;
   background-color: var(--color-alabaster);
+  @include tablet {
+    padding: 16px 7px 20px;
+  }
+  @include tablet {
+    padding: 26px 17px 30px;
+    width: 335px;
+  }
 
   &__tag {
     width: 96px;

@@ -7,6 +7,13 @@
   background-position: center;
   background-size: cover;
 
+  @include middledesk {
+    padding: 100px 0;
+  }
+  @include minitablet {
+    padding: 50px 0;
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 50px;
@@ -20,8 +27,15 @@
 .achievements {
   @include flex-all-center;
 
+  @include minitablet {
+    flex-wrap: wrap;
+  }
+
   padding-top: 102px;
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid #e0e0e0;
+  @include mobile {
+    padding-top: 30px;
+  }
   &__item {
     @include flex-all-center;
 
@@ -30,8 +44,18 @@
     border: 4px solid var(--color-green);
     border-radius: 100%;
 
+    @include mobile {
+      width: 150px;
+      height: 150px;
+    }
+    @include minitablet {
+      margin-bottom: 10px;
+    }
     &:not(:last-child) {
       margin-right: 62px;
+      @include minitablet {
+        margin-right: 10px;
+      }
     }
 
     &_content {
@@ -40,6 +64,11 @@
 
       width: 189px;
       height: 189px;
+
+      @include mobile {
+        width: 123px;
+        height: 123px;
+      }
       background-color: #f1f1f1;
       border-radius: 100%;
     }
@@ -52,6 +81,11 @@
       line-height: 59px;
       text-align: center;
       color: var(--color-primary);
+
+      @include mobile {
+        font-size: 35px;
+        line-height: 42px;
+      }
     }
 
     &_text {
@@ -62,6 +96,10 @@
       line-height: 165.4%;
       text-align: center;
       color: var(--color-primary);
+
+      @include mobile {
+        font-size: 16px;
+      }
     }
   }
 }
