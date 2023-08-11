@@ -1,14 +1,31 @@
+@import "src/app/shared/styles/mixins";
+
 .about {
-  margin-bottom: 143px;
+  padding-bottom: 143px;
+  @include minitablet {
+    padding-bottom: 70px;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
+    @include tablet {
+      align-items: center;
+    }
   }
 
   &__img {
     width: 100%;
     max-width: 910px;
     max-height: 670px;
+
+    @include middledesk {
+      max-width: 710px;
+      max-height: 470px;
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -23,7 +40,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 65px;
+    gap: 25px;
+
+    @include minidesk {
+      flex-direction: column;
+      align-items: start;
+    }
   }
 
   &__feature {

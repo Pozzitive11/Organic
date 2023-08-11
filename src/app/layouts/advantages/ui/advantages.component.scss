@@ -1,7 +1,12 @@
+@import "src/app/shared/styles/mixins";
+
 .advantages {
-  margin-bottom: 117px;
   padding: 190px 0;
   background-color: var(--color-alabaster);
+
+  @include minitablet {
+    padding: 100px 0;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -50,6 +55,15 @@
 
   &__img {
     border-radius: 63px;
+
+    @include minidesk {
+      max-width: 577px;
+      max-height: 577px;
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__items {
@@ -57,6 +71,10 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {

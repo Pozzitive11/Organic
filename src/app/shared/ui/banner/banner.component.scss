@@ -1,7 +1,14 @@
+@import "src/app/shared/styles/mixins";
+
 .banner {
   margin-bottom: 114px;
   padding: 174px 0;
   text-align: center;
+
+  @include tablet {
+    padding: 100px 0;
+    margin-bottom: 90px;
+  }
   &__title {
     text-align: center;
     color: var(--color-primary);

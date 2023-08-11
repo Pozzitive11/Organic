@@ -1,6 +1,12 @@
+@import "src/app/shared/styles/mixins";
+
 .team {
   text-align: center;
-  margin-bottom: 202px;
+  padding: 177px 0;
+
+  @include minitablet {
+    padding: 100px 0;
+  }
 
   &__title {
     margin-bottom: 16px;
@@ -15,11 +21,23 @@
   &__items {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    @include minitablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
   }
 
   &__item {
     background-color: var(--color-alabaster);
     border-radius: 24px;
+
+    @include middledesk {
+      max-width: 400px;
+    }
 
     &:hover {
       background-color: var(--color-white);
@@ -29,20 +47,26 @@
     &-img {
       border-top-left-radius: 24px;
       border-top-right-radius: 24px;
+      width: 100%;
     }
 
     &-content {
       margin: 35px 28px 34px 28px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &-info {
-      text-align: left;
     }
 
     &-name {
+      display: block;
       font-size: 25px;
+      text-align: left;
+
+      @include tablet {
+        font-size: 22px;
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
     }
 
     &-prof {

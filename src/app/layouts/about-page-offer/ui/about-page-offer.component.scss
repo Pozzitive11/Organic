@@ -1,7 +1,12 @@
+@import "src/app/shared/styles/mixins";
+
 .offer {
   padding: 188px 0;
   text-align: center;
   background-color: var(--color-primary);
+  @include minitablet {
+    padding: 100px 0;
+  }
   &__title {
     margin-bottom: 33px;
     color: var(--color-white);
@@ -10,9 +15,19 @@
   &__items {
     display: flex;
     justify-content: space-between;
+
+    @include middledesk {
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      gap: 10px;
+    }
   }
 
   &__item {
+    @include middledesk {
+      margin-bottom: 10px;
+    }
     &-img {
       margin-bottom: 24px;
       border-radius: 24px;
