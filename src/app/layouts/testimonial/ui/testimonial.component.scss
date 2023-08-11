@@ -26,9 +26,10 @@
 
 .achievements {
   @include flex-all-center;
-
-  @include minitablet {
+  gap: 62px;
+  @include tablet {
     flex-wrap: wrap;
+    gap: 42px;
   }
 
   padding-top: 102px;
@@ -50,12 +51,6 @@
     }
     @include minitablet {
       margin-bottom: 10px;
-    }
-    &:not(:last-child) {
-      margin-right: 62px;
-      @include minitablet {
-        margin-right: 10px;
-      }
     }
 
     &_content {

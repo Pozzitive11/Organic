@@ -9,11 +9,16 @@
   border-radius: 36px;
   background-color: var(--color-alabaster);
   @include tablet {
+    max-width: 310px;
     padding: 16px 7px 20px;
   }
   @include tablet {
     padding: 26px 17px 30px;
     width: 335px;
+  }
+
+  @include minitablet {
+    max-width: 350px;
   }
 
   &__tag {
