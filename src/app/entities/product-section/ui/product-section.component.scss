@@ -1,14 +1,20 @@
+@import "src/app/shared/styles/mixins";
 .product-section {
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 75px;
+    gap: 30px;
+
+    @include minitablet {
+      flex-direction: column;
+    }
   }
 
   &__left {
     position: relative;
-    border: 1px solid red;
+    border: 5px solid var(--color-alabaster);
     border-radius: 30px;
   }
 
@@ -30,10 +36,25 @@
 
   &__img {
     border-radius: 30px;
+
+    @include middledesk {
+      width: 500px;
+      height: 500px;
+    }
+
+    @include minidesk {
+      width: 400px;
+      height: 400px;
+    }
+
+    @include mobile {
+      width: 350px;
+      height: 350px;
+    }
   }
 
   &__right {
-    width: 658px;
+    max-width: 658px;
   }
 
   &__title {

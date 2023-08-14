@@ -1,13 +1,16 @@
 <div class="calculate-products">
-  <label class="calculate-products__label">Quantity :</label>
-  <input
-    class="calculate-products__input"
-    [(ngModel)]="quantity"
-    type="number"
-    value="1"
-    min="1"
-    (input)="changeQuantity()"
-  />
+  <div>
+    <label class="calculate-products__label">Quantity :</label>
+    <input
+      class="calculate-products__input"
+      [(ngModel)]="quantity"
+      type="number"
+      value="1"
+      min="1"
+      (input)="changeQuantity()"
+    />
+  </div>
+
   <ng-container *ngIf="showAddToCartButton">
     <app-button
       type="primary"
