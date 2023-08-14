@@ -1,8 +1,18 @@
+@import "src/app/shared/styles/mixins";
+
 .project-section {
-  margin-bottom: 230px;
+  padding-bottom: 230px;
+  @include middledesk {
+    padding-bottom: 0;
+  }
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 150px 30px;
+    gap: 30px;
+
+    @include middledesk {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
   }
 }
