@@ -1,7 +1,14 @@
+@import "src/app/shared/styles/mixins";
+
 .news {
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 150px 30px;
+
+    @include minitablet {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 110px 30px;
+    }
   }
 }

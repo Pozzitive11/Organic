@@ -1,0 +1,1 @@
+export { NewsCardComponent } from './ui';

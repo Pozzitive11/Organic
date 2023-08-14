@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NewsCardComponent } from '@shared/ui/news-card/news-card.component';
 import { RouterModule } from '@angular/router';
+import { NewsCardComponent } from '@entities/news-cart';
 
 @Component({
   selector: 'app-news-list',
