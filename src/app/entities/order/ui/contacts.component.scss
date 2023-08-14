@@ -1,3 +1,5 @@
+@import "src/app/shared/styles/mixins";
+
 .contacts {
   margin-bottom: 30px;
   display: flex;
@@ -45,6 +47,13 @@
     height: 96px;
     padding: 15px;
 
+    @include minitablet {
+      width: 500px;
+    }
+    @include mobile {
+      width: 350px;
+    }
+
     &::placeholder {
       color: #ababab;
       font-family: var(--font-roboto);
@@ -53,5 +62,10 @@
       font-weight: 400;
       line-height: normal;
     }
+  }
+  &__button {
+    margin-top: 20px;
+    display: block;
+    width: 300px;
   }
 }

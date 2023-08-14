@@ -15,6 +15,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    @include mobile {
+      margin-right: 0;
+    }
   }
 
   &__input {
@@ -35,6 +39,12 @@
 
     @include middledesk {
       padding-left: 0;
+    }
+
+    @include mobile {
+      width: 100px;
+      height: 50px;
+      margin-right: 0;
     }
   }
 
