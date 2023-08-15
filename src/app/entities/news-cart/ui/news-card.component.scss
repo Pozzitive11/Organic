@@ -15,12 +15,11 @@
   height: 529px;
 
   &__date {
+    @include flex-all-center;
+
     position: absolute;
     top: 46px;
     left: 46px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 81px;
     height: 81px;
     border-radius: 100%;
@@ -73,10 +72,10 @@
   }
 
   &__link {
+    @include flex-v-center;
+
     position: relative;
     width: 122px;
-    display: flex;
-    align-items: center;
     gap: 6px;
     font-size: 20px;
     font-style: normal;

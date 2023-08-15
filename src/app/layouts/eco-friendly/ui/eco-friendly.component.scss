@@ -13,6 +13,11 @@
   @include mobile {
     padding: 20px;
   }
+  &__img {
+    @include minidesk {
+      display: none;
+    }
+  }
   &__content {
     margin-left: -80px;
     padding: 89px 77px;

@@ -56,17 +56,6 @@ const routes: Routes = [
     component: NotFoundComponent,
   },
   { path: '**', redirectTo: '/not-found', pathMatch: 'full' },
-  // {
-  //   path: "login",
-  //   loadComponent: () => import("").then((m) => m.LoginPageComponent),
-  //   canLoad: []
-  // },
-  // {
-  //   path: "registration",
-  //   loadComponent: () =>
-  //     import("").then((m) => m.RegistrationPageComponent),
-  //   canLoad: []
-  // }
 ];
 
 @NgModule({

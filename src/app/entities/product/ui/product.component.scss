@@ -1,9 +1,9 @@
 @import "src/app/shared/styles/mixins";
 
 .product {
-  display: flex;
+  @include flex-h-between;
+
   flex-direction: column;
-  justify-content: space-between;
   max-width: 335px;
   padding: 26px 17px 30px;
   border-radius: 36px;
@@ -55,9 +55,7 @@
   }
 
   &__info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-all-sb;
     padding-top: 6px;
     border-top: 1px solid #dedddd;
   }

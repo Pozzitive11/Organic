@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '@shared/ui/button/button.component';
 
 @Component({
@@ -6,6 +7,6 @@ import { ButtonComponent } from '@shared/ui/button/button.component';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss'],
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, RouterModule],
 })
 export class HeroComponent {}
