@@ -3,7 +3,7 @@
     <div class="header__inner">
       <app-logo routerLink="/" class="header__logo"></app-logo>
 
-      <nav class="nav">
+      <nav class="nav" [class.open]="isMenuOpen">
         <ul class="nav__list">
           <li routerLinkActive="active" class="nav__item">
             <a routerLink="/" class="nav__link">Home</a>
@@ -23,8 +23,17 @@
         </ul>
       </nav>
       <div class="header__right">
-        <app-search-products></app-search-products>
+        <app-search-products class="header__search"></app-search-products>
         <app-cart routerLink="/order"></app-cart>
+        <div
+          class="burger-menu"
+          [class.open]="isMenuOpen"
+          (click)="toggleMenu()"
+        >
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </div>
     </div>
   </div>

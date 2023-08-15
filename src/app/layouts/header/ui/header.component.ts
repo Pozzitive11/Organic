@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from '@entities/cart';
 import { SearchProductsComponent } from '@features/search-products';
@@ -18,4 +18,14 @@ import { LogoComponent } from '@widgets/logo';
     LogoComponent,
   ],
 })
-export class HeaderComponent {}
+export class HeaderComponent implements OnInit {
+  isMenuOpen = false;
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+}

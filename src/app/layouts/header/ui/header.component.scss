@@ -2,25 +2,55 @@
 
 .header {
   padding: 75px 0;
+
+  @include minidesk {
+    padding: 50px 0;
+  }
   &__inner {
     @include flex-v-center;
   }
 
   &__right {
+    position: relative;
     display: flex;
     margin-left: auto;
   }
 
   &__logo {
     margin-right: 150px;
+    @include middledesk {
+      margin-right: 70px;
+    }
+    @include minidesk {
+      margin-right: 50px;
+    }
+    @include minitablet {
+      margin-right: 0px;
+    }
   }
 }
 
 .nav {
   margin-right: 130px;
+
+  @include middledesk {
+    margin-right: 70px;
+  }
+  @include minidesk {
+    margin-right: 50px;
+  }
   &__list {
     @include flex-v-center;
     gap: 30px;
+
+    @include middledesk {
+      gap: 20px;
+    }
+
+    @include minitablet {
+      display: none;
+      gap: 30px;
+    }
   }
 
   &__link {
@@ -34,5 +64,60 @@
     &:hover {
       text-decoration: underline;
     }
+
+    @include minitablet {
+      font-size: 30px;
+    }
+  }
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+
+  z-index: 5;
+
+  @include minitablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.open .burger-menu .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.open .burger-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .burger-menu .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+}
+
+@include minitablet {
+  .open .nav__list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    background-color: var(--color-alabaster);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
   }
 }

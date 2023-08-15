@@ -14,12 +14,12 @@
 
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      justify-items: center;
+      gap: 20px;
     }
 
     @include minitablet {
       grid-template-columns: repeat(1, 1fr);
-      align-items: center;
       justify-items: center;
     }
   }

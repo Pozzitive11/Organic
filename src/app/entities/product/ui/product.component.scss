@@ -8,6 +8,9 @@
   padding: 26px 17px 30px;
   border-radius: 36px;
   background-color: var(--color-alabaster);
+  @include minidesk {
+    max-width: 325px;
+  }
   @include tablet {
     max-width: 310px;
     padding: 16px 7px 20px;

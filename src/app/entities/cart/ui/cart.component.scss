@@ -9,8 +9,26 @@
   border-radius: 33px;
   cursor: pointer;
 
+  @include minidesk {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  @include minitablet {
+    position: fixed;
+    right: 15px;
+    top: 170px;
+    width: 53px;
+    z-index: 4;
+  }
+
   &:hover {
     border: 1px solid var(--color-text);
+
+    @include minidesk {
+      border: none;
+    }
   }
 
   &__button {
@@ -21,6 +39,10 @@
     margin-right: 12px;
     background-color: var(--color-primary);
     border-radius: 100%;
+
+    @include minidesk {
+      margin-right: 0;
+    }
   }
 
   &__count {
@@ -30,5 +52,9 @@
     font-size: 17px;
     line-height: 21px;
     color: var(--color-primary);
+
+    @include minidesk {
+      display: none;
+    }
   }
 }
