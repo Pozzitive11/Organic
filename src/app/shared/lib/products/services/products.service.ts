@@ -10,7 +10,7 @@ import { Product } from '@entities/product/models/products.model';
   providedIn: 'root',
 })
 export class ProductsService extends ApiService {
-  constructor(protected http: HttpClient, private store: Store) {
+  constructor(protected override http: HttpClient, private store: Store) {
     super(http);
   }
 
@@ -21,6 +21,4 @@ export class ProductsService extends ApiService {
   setProducts(products: Product[]): void {
     this.store.dispatch(ProductActions.getProductsSuccess({ products }));
   }
-
-  getProductById() {}
 }
