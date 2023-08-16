@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: "http://localhost:5000/",
-  production: true
+  apiUrl: 'https://organic-f86ec-default-rtdb.firebaseio.com/products.json',
+  production: true,
 };
